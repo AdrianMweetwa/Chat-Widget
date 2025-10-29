@@ -1,0 +1,122 @@
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-attachment: fixed; /* keeps background still on scroll (desktop) */
+}
+
+/* Both background layers */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.8s ease-in-out;
+    z-index: -1;
+}
+
+/* Default background for large screens */
+body::before {
+    background-image: url("../assets/img/img1.jpg");
+    opacity: 1;
+}
+
+/* Background for small screens (hidden by default) */
+body::after {
+    background-image: url("../assets/img/img2.jpg");
+    opacity: 0;
+}
+
+/* When the screen is ≤ 768px, fade to img2 */
+@media (max-width: 768px) {
+    body::before {
+        opacity: 0;
+    }
+    body::after {
+        opacity: 1;
+    }
+}
+
+.rw-conversation-container .rw-header .rw-with-avatar {
+  font-style: italic;
+}
+
+.rw-conversation-container .rw-header {
+  background-color: rgb(158, 27, 30);
+}
+
+.rw-conversation-container .rw-messages-container .rw-message .rw-client {
+  background-color: #ffcc80;
+  color: #000 !important;
+  color: #5c3d00;
+  font-family: "Noto Sans", "Roboto", sans-serif;
+  padding: 12px;
+  border-radius: 18px 18px 0 18px;
+  /* Rounded corners */
+  max-width: 70%;
+  font-weight: 400;
+  font-size: 13.5px;
+}
+
+.rw-conversation-container
+  .rw-messages-container
+  .rw-message
+  .rw-response {
+  background-color: #f7f0e6;
+  font-family: "Noto Sans", "Roboto", sans-serif;
+  padding: 12px;
+  border-radius: 18px 18px 18px 0;
+  /* Rounded corners */
+  max-width: 70%;
+  font-weight: 400;
+  font-size: 13.5px;
+}
+
+.rw-launcher {
+  background-color: rgb(158, 27, 30);
+}
+
+.rw-conversation-container .rw-sender .rw-send-icon-ready {
+  fill: rgb(158, 27, 30);
+}
+
+
+/* Launcher button across all states */
+.rw-launcher,
+.rw-launcher:hover,
+.rw-launcher:focus,
+.rw-launcher:active,
+.rw-launcher[aria-expanded="true"],
+.rw-open-launcher {
+  background-color: rgb(158, 27, 30) !important;
+  border-color: rgb(158, 27, 30) !important;
+  box-shadow: 0 0 15px rgba(158, 27, 30, 0.6);
+}
+
+/* Header bar and close button */
+.rw-conversation-container .rw-header,
+.rw-conversation-container .rw-header:hover,
+.rw-conversation-container .rw-header:focus {
+  background-color: rgb(158, 27, 30) !important;
+  border-color: rgb(158, 27, 30) !important;
+}
+
+/* Send icon color */
+.rw-conversation-container .rw-sender .rw-send-icon-ready {
+  fill: rgb(158, 27, 30) !important;
+}
+
+#webchat iframe {
+  background-color: transparent !important;
+}
