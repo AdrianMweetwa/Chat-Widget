@@ -10,7 +10,7 @@
         customData: { language: "en" },
         // socketUrl: "http://localhost:5005",
         socketUrl: "https://izbchatbot.onrender.com",
-        socketPath: "/socket.io/",
+        // socketPath: "/socket.io/",
         title: "Adrian",
         subtitle: "Seamless Banking at Your Fingertips",
         params: { storage: "session" },
